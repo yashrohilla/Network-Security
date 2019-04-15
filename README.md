@@ -1,1 +1,3 @@
 # Network-Security
+
+WEP uses RC4 algorithm which was incorrectly implemented and allows attackers to modify messages without needing the secret key to view the message. The rcv_msg.py file is a user who generates the secret key, creates a keystream using rc4.py and send the message to rcv_msg.py. Message_Mod.py sniffs the network for messages and without knowledge of the secret key/keystream performs an XOR operation with the cipher text and a new message that the attacker generates. Rcv_msg.py receives two messages, one from the genuine user and another from Message_Mod.py. Both appear to have been generated using the secret key and hence seem valid and from the same user.
